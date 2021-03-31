@@ -2,8 +2,9 @@
 Firebase authentication for Cloudflare workers
 
 # Installation
+`npm i fireflare`
 
-
+https://www.npmjs.com/package/fireflare
 # Usage
 ```typescript
 // Taken from https://github.com/cloudflare/worker-template-router
