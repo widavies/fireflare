@@ -7,6 +7,8 @@ Firebase authentication for Cloudflare workers
 https://www.npmjs.com/package/fireflare
 # Usage
 ```typescript
+import {auth} from "fireflare"
+
 // Taken from https://github.com/cloudflare/worker-template-router
 async function handleRequest(request: Request) {
   const r = new Router()
