@@ -1,0 +1,26 @@
+{
+  "name": "fireflare",
+  "version": "1.0.0",
+  "description": "Firebase authentication for Cloudflare workers",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/widavies/fireflare.git"
+  },
+  "files": ["dist/**/*"],
+  "keywords": ["Firebase", "Cloudflare", "workers"],
+  "author": "Will Davies",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/widavies/fireflare/issues"
+  },
+  "homepage": "https://github.com/widavies/fireflare#readme",
+  "devDependencies": {
+    "typescript": "^4.2.3"
+  }
+}
