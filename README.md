@@ -1,6 +1,10 @@
 # FireFlare
 Firebase authentication for Cloudflare workers
 
+# Disclaimer
+This code does work, but when I find time I do want to add some unit testing and clean up the NPM package. 
+If you can't get the npm package, just copy the code over for now. 
+
 # Installation
 `npm i fireflare`
 
