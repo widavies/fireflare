@@ -1,5 +1,5 @@
 # FireFlare
-Firebase authentication for Cloudflare workers with no dependencies.
+Firebase authentication for Cloudflare workers with no dependencies. Google public keys are cached with Workers KV to speed up authentication.
 
 # Installation
 `npm i fireflare`
