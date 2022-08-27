@@ -27,7 +27,7 @@ async function handleRequest(request: Request) {
 }
 ```
 # Additional/custom claims validation
-```
+```typescript
 if (!(await auth('projectId', env.KV_DANGEROUS_KEAP, request.headers.get('Authorization').replace("Bearer ", ""), [
   // Use a helper claims check function
   Equals('custom-claim', 'expected-value'),
@@ -37,6 +37,7 @@ if (!(await auth('projectId', env.KV_DANGEROUS_KEAP, request.headers.get('Author
   // Validate claims with custom implementation
   (claims) => {
     const value = claims['custom-claim'];
+    // Return false to reject
     return (typeof value === 'string' || value instanceof String) && value === "custom-value";
   }
 ]))) {
