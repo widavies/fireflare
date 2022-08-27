@@ -1,10 +1,5 @@
 # FireFlare
-Firebase authentication for Cloudflare workers
-
-# Disclaimer
-The NPM package may (or may not) be a bit buggy. I uploaded it in a hurry and haven't setup much unit testing or CI for it.
-If you have any problems with the package, just copy the code over directly for now. Once I have some more time, I'll clean up this
-package a bit more.
+Firebase authentication for Cloudflare workers with no dependencies.
 
 # Installation
 `npm i fireflare`
