@@ -26,3 +26,21 @@ async function handleRequest(request: Request) {
   return resp
 }
 ```
+# Additional/custom claims validation
+```
+if (!(await auth('projectId', env.KV_DANGEROUS_KEAP, request.headers.get('Authorization').replace("Bearer ", ""), [
+  // Use a helper claims check function
+  Equals('custom-claim', 'expected-value'),
+  InPast('issued'),
+  InFuture('exp'),
+  NotEmpty('sub'),
+  // Validate claims with custom implementation
+  (claims) => {
+    const value = claims['custom-claim'];
+    return (typeof value === 'string' || value instanceof String) && value === "custom-value";
+  }
+]))) {
+  // Not authenticated
+  return new Response("Unauthorized");
+}
+```
