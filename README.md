@@ -14,7 +14,7 @@ async function handleRequest(request: Request) {
   const r = new Router()
 
   r.get('/', async (request) => {
-    if(!(await auth('projectId', KV_NAMESPACE, request.headers.get('Authorization').replace("Bearer ", "")))) {
+    if(!(await auth('projectId', KV_NAMESPACE, request.headers.get('Authorization')?.replace("Bearer ", "") ?? null))) {
       // Not authenticated
       return new Response("Unauthorized");
     }
@@ -28,7 +28,7 @@ async function handleRequest(request: Request) {
 ```
 # Additional/custom claims validation
 ```typescript
-if (!(await auth('projectId', env.KV_DANGEROUS_KEAP, request.headers.get('Authorization').replace("Bearer ", ""), [
+if (!(await auth('projectId', env.KV_DANGEROUS_KEAP, request.headers.get('Authorization')?.replace("Bearer ", "") ?? null, [
   // Use a helper claims check function
   Equals('custom-claim', 'expected-value'),
   InPast('issued'),
