@@ -28,7 +28,7 @@ async function handleRequest(request: Request) {
 ```
 # Additional/custom claims validation
 ```typescript
-if (!(await auth('projectId', env.KV_DANGEROUS_KEAP, request.headers.get('Authorization')?.replace("Bearer ", "") ?? null, [
+if (!(await auth('projectId', env.KV_NAMESPACE, request.headers.get('Authorization')?.replace("Bearer ", "") ?? null, [
   // Use a helper claims check function
   Equals('custom-claim', 'expected-value'),
   InPast('issued'),
